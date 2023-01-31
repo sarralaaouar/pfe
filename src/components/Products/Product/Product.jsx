@@ -1,5 +1,6 @@
 import React from 'react'
-import { Card, CardMedia,CardContent,CardActions,Typography,} from '@material-ui/core';
+import { Card, CardMedia,CardContent,CardActions,Typography,IconButton} from '@material-ui/core';
+import { ShoppingBasket } from '@material-ui/icons';
 import useStyles from './styles';
 
 function Product  ({product})  {
@@ -20,7 +21,9 @@ function Product  ({product})  {
           <Typography variant='h2' color='textSecondary'>{product.description}</Typography>
         </CardContent>
         <CardActions disableSpacing className={classes.CardActions}>
-          
+          <IconButton aria-label='Add to Cart'>
+            <ShoppingBasket/>
+          </IconButton>
         </CardActions>
     </Card>
   )
