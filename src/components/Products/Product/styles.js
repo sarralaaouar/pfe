@@ -4,10 +4,8 @@ export default makeStyles(() => ({
   root: {
     maxWidth: '100%',
   },
-  media: {
-    height: 0,
-    paddingTop: '56.25%', // 16:9
-  },
+  
+  
   cardActions: {
     display: 'flex',
     justifyContent: 'flex-end',
@@ -15,5 +13,19 @@ export default makeStyles(() => ({
   cardContent: {
     display: 'flex',
     justifyContent: 'space-between',
+  },
+
+ 
+  product__card: {
+    justifyContent: 'flex-end',
+    display: 'flex',
+    
+  },
+
+  product__image :{
+    display: 'block',
+    marginLeft : 'auto' ,
+    width: '100%',
+     
   },
 }));
