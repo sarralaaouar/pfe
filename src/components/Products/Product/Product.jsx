@@ -10,7 +10,7 @@ function Product  ({product, onAddToCart})  {
   return (
     <Card className={classes.root}>
         <div className={classes.product__card}/>
-      <img className={classes.product__image} src={product.image?.url} alt={product.name} />
+      <img className={classes.product__image} src={product?.image?.url} alt={product.name} />
         <CardContent>
           <div className={classes.CardContent}>
             <Typography variant='h5' gutterBottom>

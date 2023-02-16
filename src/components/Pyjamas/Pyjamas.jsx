@@ -1,10 +1,10 @@
 import React , {useState,useEffect} from 'react'
 
+import React from 'react'
 import { commerce } from './lib/commerce';
-import {Products , Navbar, Cart , Mugs} from './components';
+import {Products , Navbar, Cart } from './components';
 import { BrowserRouter as Router, Switch,Route } from 'react-router-dom';
-
-function App  () {
+const Pyjamas = () => {
   const [products, setProducts]=useState([]);
   const [cart,SetCart]= useState([]);
   
@@ -49,30 +49,31 @@ function App  () {
     },[]);
 
     console.log(cart);
-
-  return (
-    <Router>
-      <div>
-        <Navbar totalItems={cart?.total_items}/> 
-        <Switch>
-          <Route exact path='/'>
-            <Products products={products} onAddToCart={handleAddToCart}/> 
-          </Route>
-
-          <Route exact path='/cart'>
-            <Cart cart={cart} 
-            handleUpdateCartQty={handleUpdateCartQty}
-            handleremoveFromcart={handleremoveFromcart}
-            handleEmptyCart={handleEmptyCart}
-            />
-          </Route>
-
-            
-           
-        </Switch>
-        
-   </div>
-    </Router>
-  )
+    return (
+      <Router>
+        <div>
+          <Navbar totalItems={cart?.total_items}/> 
+          <Switch>
+            <Route exact path='/pyjamas'>
+              <Products products={products} onAddToCart={handleAddToCart}/> 
+            </Route>
+  
+            <Route exact path='/cart'>
+              <Cart cart={cart} 
+              handleUpdateCartQty={handleUpdateCartQty}
+              handleremoveFromcart={handleremoveFromcart}
+              handleEmptyCart={handleEmptyCart}
+              />
+            </Route>
+  
+              
+             
+          </Switch>
+          
+     </div>
+      </Router>
+    )
 }
-export default App
+
+
+export default Pyjamas;

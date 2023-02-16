@@ -1,4 +1,5 @@
 import { makeStyles, fade } from '@material-ui/core/styles';
+import { NoEncryption } from '@material-ui/icons';
 
 const drawerWidth = 0;
 
@@ -10,6 +11,7 @@ export default makeStyles((theme) => ({
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
       backgroundColor : '#f4c2c2',
+      justifyContent : 'space-between',
       
     },
   },
@@ -67,5 +69,25 @@ export default makeStyles((theme) => ({
     [theme.breakpoints.up('md')]: {
       width: '20ch',
     },
+  },
+
+  a: {
+    color: 'inherit',
+    textDecoration: 'none',
+    height :'100%',
+    display: 'flex',
+    alignItems: 'center',
+    padding:theme.spacing(0, 10),
+  },
+
+  ul:{
+textDecoration: 'none',
+    height :'100%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    justifyItems:'space-between',
+    
+    
   },
 }));
