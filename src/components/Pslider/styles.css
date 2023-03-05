@@ -9,6 +9,10 @@ h1 {
   margin: 1rem auto 4rem;
   color: #f6c4e6;
 }
+.name_product {
+  font-size: 15px;
+  margin: 10px 0;
+}
 
 .product--image {
   width: 100%;
@@ -18,10 +22,11 @@ h1 {
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(7, 6, 7, 0.2);
-  max-width: 320px;
+  max-width: 360px;
   margin: auto 1rem;
   text-align: center;
   font-family: arial;
+  margin-bottom: 30px;
 }
 
 .price {
@@ -43,4 +48,46 @@ h1 {
 
 .card button:hover {
   opacity: 0.7;
+}
+
+.s_slider_arrows {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 40px !important;
+  align-items: center;
+  text-align: center;
+  gap: 30px;
+}
+
+.arr_right {
+  background-color: #f6c4e6;
+  width: 30px;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.arr_left {
+  background-color: #f6c4e6;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.s_head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.link_slider {
+  color: #f6c4e6;
+  margin-bottom: 40px !important;
 }

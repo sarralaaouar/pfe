@@ -1,27 +1,24 @@
 import React, { useState, useEffect } from "react";
 import { commerce } from "./lib/commerce";
-import { Products, Navbar, Cart, Soin, Pyjamas,Peluche, } from "./components";
+import { Products, Navbar, Cart, Soin, Pyjamas, Peluche } from "./components";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
 import Form from "./components/Login/Form";
-
-
-
-import Home from "./components/Home/Home"
+import Home from "./components/Home/Home";
 
 import { message } from "antd";
 import Pslider from "./components/Pslider/Pslider";
-import Slider from './components/Slider/Slider';
+import Slider from "./components/Slider/Slider";
 import Footer from "./components/Footer/Footer";
 import Nav2 from "./components/Navbar/Nav2";
+import Register from "./components/Register/Register";
+import Nav from "./components/CategoriesNav/Nav";
 
 function App() {
   const [messageApi, contextHolder] = message.useMessage();
   const key = "updatable";
-
   const [products, setProducts] = useState([]);
   const [cart, SetCart] = useState([]);
-
   const fetchProducts = async () => {
     const { data } = await commerce.products.list();
     setProducts(data);
@@ -67,6 +64,10 @@ function App() {
     fetchCart();
   }, []);
 
+  const search = () => {
+    return [];
+  };
+
   // console.log(cart);
 
   return (
@@ -75,9 +76,10 @@ function App() {
       <Router>
         <div className="app">
           <Navbar totalItems={cart?.total_items} />
-          
+          {/* categories nav  */}
+          <Nav />
           <Switch>
-            <Route exact path="/">
+            <Route exact path="/products">
               <Products products={products} onAddToCart={handleAddToCart} />
             </Route>
             <Route exact path="/cart">
@@ -91,30 +93,29 @@ function App() {
             <Route exact path="/mugs">
               <Pyjamas products={products} onAddToCart={handleAddToCart} />
             </Route>
-            <Route exact path='/soin'>
-              <Soin products={products} onAddToCart={handleAddToCart}/>
+            <Route exact path="/soin">
+              <Soin products={products} onAddToCart={handleAddToCart} />
             </Route>
-            <Route exact path='/peluche'>
-              <Peluche products={products} onAddToCart={handleAddToCart}/>
+            <Route exact path="/peluche">
+              <Peluche products={products} onAddToCart={handleAddToCart} />
             </Route>
-            
-            <Route exact path='login'>
-              <Form/>
+            <Route exact path="/login">
+              <Form />
             </Route>
-          
-  
-            <Route exact path='/home'>
-            
-            <Slider/>
-            <Pslider></Pslider> 
-            <Footer/>
-           </Route> 
-            
+            <Route exact path="/register">
+              <Register />
+            </Route>
+            <Route exact path="/">
+              <Slider />
+              <Pslider
+                products={products}
+                onAddToCart={handleAddToCart}
+              ></Pslider>
+            </Route>
           </Switch>
-       
         </div>
+        <Footer />
       </Router>
-      
     </>
   );
 }

@@ -1,0 +1,17 @@
+.search {
+  width: 500px;
+  float: right;
+  margin-top: -40px;
+}
+
+@media only screen and (max-width: 1100px) {
+  .search {
+    width: 100%;
+    float: right;
+    margin-top: 0px;
+  }
+}
+
+.ant-input-search-button {
+  background-color: #f4c2c2 !important;
+}

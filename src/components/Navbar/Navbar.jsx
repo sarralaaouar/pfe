@@ -8,7 +8,7 @@ import {
   Menu,
   Typography,
 } from "@material-ui/core";
-import { ShoppingBasket , PermIdentity} from "@material-ui/icons";
+import { ShoppingBasket, PermIdentity } from "@material-ui/icons";
 import { Link, useLocation } from "react-router-dom";
 
 import logo from "../../assests/logo.png";
@@ -19,12 +19,12 @@ const Navbar = ({ totalItems }) => {
   const classes = UseStyles();
   const location = useLocation();
   return (
-    <>
+    <div className="header" style={{ marginBottom: "50px" }}>
       <AppBar position="fixed" className={classes.appBar} color="inherit">
         <Toolbar>
           <Typography
             component={Link}
-            to="/home"
+            to=""
             variant="h6"
             className={classes.title}
             color="inherit"
@@ -37,12 +37,10 @@ const Navbar = ({ totalItems }) => {
             />
             Disney Store
           </Typography>
-          <Typography>
-            <Search></Search>
-          </Typography>
+          <Typography>{/* <Search></Search> */}</Typography>
 
-          <Typography>
-            <ul position="fixed" className={classes.ul} color="inherit">
+          {/* <Typography> */}
+          {/* <ul position="fixed" className={classes.ul} color="inherit">
               <li className={classes.a}>
                 <a href="/mugs">Mugs</a>
               </li>
@@ -52,8 +50,8 @@ const Navbar = ({ totalItems }) => {
               <li className={classes.a}>
                 <a href="/peluche">Peluches</a>
               </li>
-            </ul>
-          </Typography>
+            </ul> */}
+          {/* </Typography> */}
           <div className={classes.grow} />
           {/* { location.pathname =='/' && ( */}
           <div className={classes.button}>
@@ -83,7 +81,7 @@ const Navbar = ({ totalItems }) => {
           {/* )} */}
         </Toolbar>
       </AppBar>
-    </>
+    </div>
   );
 };
 

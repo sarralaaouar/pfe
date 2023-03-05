@@ -1,14 +1,14 @@
-import React from 'react'
-import SingunForm from './SingunForm'
-import "./Loginform.css"
-
+import React from "react";
+import SingunForm from "./SingunForm";
+import "./Loginform.css";
 
 const Form = () => {
   return (
-    <div>
-      <SingunForm/>
+    <div className="login">
+      <p>login code here</p>
+      <a href="/register">register</a>
     </div>
-  )
-}
+  );
+};
 
-export default Form
+export default Form;

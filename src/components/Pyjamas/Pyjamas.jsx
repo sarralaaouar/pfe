@@ -4,7 +4,9 @@ import { Grid } from "@material-ui/core";
 import Product from "../Products/Product/Product";
 import { useEffect } from "react";
 import { useState } from "react";
-
+import { Input } from "antd";
+import "../Products/search.css";
+const { Search } = Input;
 
 const Pyjamas = (props) => {
   const { products, onAddToCart } = props;
@@ -27,8 +29,29 @@ const Pyjamas = (props) => {
     filterProduct();
   }, [products]);
 
+  const searchFilterFunction = (e) => {
+    const inputValue = e;
+    if (inputValue !== "") {
+      const newArray = products.filter((item) => {
+        return item.name.toLowerCase().match(inputValue);
+      });
+      setPyjamas(newArray);
+    } else {
+      setPyjamas(products);
+    }
+  };
+
   return (
     <>
+      <div className="search">
+        <Search
+          placeholder="search for product"
+          enterButton
+          onChange={(e) => {
+            searchFilterFunction(e.target.value);
+          }}
+        />
+      </div>
       <div className="pyjamas">
         <Grid container n="center" spacing={4}>
           {pyjamas.map((product) => (
