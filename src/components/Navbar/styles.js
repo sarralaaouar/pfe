@@ -21,6 +21,7 @@ export default makeStyles((theme) => ({
     display: 'flex',
     textDecoration: 'none',
     fontFamily : 'cursive',
+    color :' #ffffff',
   },
   image: {
     marginRight: '10px',
@@ -72,12 +73,13 @@ export default makeStyles((theme) => ({
   },
 
   a: {
-    color: 'inherit',
+    color: '#ffffff',
     textDecoration: 'none',
     height :'100%',
     display: 'flex',
     alignItems: 'center',
     padding:theme.spacing(0, 10),
+    fontFamily : 'Gill Sans',
   },
 
   ul:{
@@ -87,6 +89,7 @@ textDecoration: 'none',
     alignItems: 'center',
     justifyContent: 'center',
     justifyItems:'space-between',
+    color : '#ffffff',
     
     
   },

@@ -8,11 +8,12 @@ import {
   Menu,
   Typography,
 } from "@material-ui/core";
-import { ShoppingBasket } from "@material-ui/icons";
+import { ShoppingBasket , PermIdentity} from "@material-ui/icons";
 import { Link, useLocation } from "react-router-dom";
 
 import logo from "../../assests/logo.png";
 import UseStyles from "./styles";
+import Search from "../Search/Search";
 
 const Navbar = ({ totalItems }) => {
   const classes = UseStyles();
@@ -23,7 +24,7 @@ const Navbar = ({ totalItems }) => {
         <Toolbar>
           <Typography
             component={Link}
-            to="/"
+            to="/home"
             variant="h6"
             className={classes.title}
             color="inherit"
@@ -36,6 +37,9 @@ const Navbar = ({ totalItems }) => {
             />
             Disney Store
           </Typography>
+          <Typography>
+            <Search></Search>
+          </Typography>
 
           <Typography>
             <ul position="fixed" className={classes.ul} color="inherit">
@@ -43,10 +47,10 @@ const Navbar = ({ totalItems }) => {
                 <a href="/mugs">Mugs</a>
               </li>
               <li className={classes.a}>
-                <a href="/pyjamas">Pyjamas</a>
+                <a href="/soin">Soin</a>
               </li>
               <li className={classes.a}>
-                <a href="/peluches">Peluches</a>
+                <a href="/peluche">Peluches</a>
               </li>
             </ul>
           </Typography>
@@ -61,6 +65,18 @@ const Navbar = ({ totalItems }) => {
             >
               <Badge badgeContent={totalItems} color="secondary">
                 <ShoppingBasket />
+              </Badge>
+            </IconButton>
+          </div>
+          <div className={classes.button}>
+            <IconButton
+              component={Link}
+              to="/login"
+              aria-label="login"
+              color="inhert"
+            >
+              <Badge color="secondary">
+                <PermIdentity />
               </Badge>
             </IconButton>
           </div>

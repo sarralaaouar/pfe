@@ -1,9 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { commerce } from "./lib/commerce";
-import { Products, Navbar, Cart, Mugs, Pyjamas } from "./components";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Products, Navbar, Cart, Soin, Pyjamas,Peluche, } from "./components";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
+import Form from "./components/Login/Form";
+
+
+
+import Home from "./components/Home/Home"
+
 import { message } from "antd";
+import Pslider from "./components/Pslider/Pslider";
+import Slider from './components/Slider/Slider';
+import Footer from "./components/Footer/Footer";
+import Nav2 from "./components/Navbar/Nav2";
 
 function App() {
   const [messageApi, contextHolder] = message.useMessage();
@@ -28,7 +38,7 @@ function App() {
       messageApi.open({
         key,
         type: "success",
-        content: "jfbhej",
+        content: "Produit Ajoutè",
         duration: 2,
         style: {
           marginTop: "10vh",
@@ -65,6 +75,7 @@ function App() {
       <Router>
         <div className="app">
           <Navbar totalItems={cart?.total_items} />
+          
           <Switch>
             <Route exact path="/">
               <Products products={products} onAddToCart={handleAddToCart} />
@@ -77,15 +88,33 @@ function App() {
                 handleEmptyCart={handleEmptyCart}
               />
             </Route>
-            <Route exact path="/pyjamas">
+            <Route exact path="/mugs">
               <Pyjamas products={products} onAddToCart={handleAddToCart} />
             </Route>
-            <Route exact path="/mugs">
-              <Mugs products={products} onAddToCart={handleAddToCart} />
+            <Route exact path='/soin'>
+              <Soin products={products} onAddToCart={handleAddToCart}/>
             </Route>
+            <Route exact path='/peluche'>
+              <Peluche products={products} onAddToCart={handleAddToCart}/>
+            </Route>
+            
+            <Route exact path='login'>
+              <Form/>
+            </Route>
+          
+  
+            <Route exact path='/home'>
+            
+            <Slider/>
+            <Pslider></Pslider> 
+            <Footer/>
+           </Route> 
+            
           </Switch>
+       
         </div>
       </Router>
+      
     </>
   );
 }
