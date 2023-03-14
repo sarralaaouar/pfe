@@ -52,6 +52,7 @@ const Peluche = (props) => {
           }}
         />
       </div>
+      <h1>Pèluches</h1>
       <div className="soin">
         <Grid container n="center" spacing={4}>
           {peluche.map((product) => (

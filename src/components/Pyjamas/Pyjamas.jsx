@@ -52,6 +52,7 @@ const Pyjamas = (props) => {
           }}
         />
       </div>
+      <h1>Mugs</h1>
       <div className="pyjamas">
         <Grid container n="center" spacing={4}>
           {pyjamas.map((product) => (

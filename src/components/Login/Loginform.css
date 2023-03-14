@@ -1,95 +1,95 @@
+.sec1{
+  width: 100%;
+    max-width: 420px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1rem;
+    background-color: rgba(243, 218, 229, 0.4);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-grow: 1;
+  padding-bottom: 1rem;
+ align-items: center;
+ border-radius: 0.5rem;
+}
+
+.sec2{
+  width: 100%;
+    max-width: 420px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1rem;
+    background-color: rgba(249, 223, 238, 0.4);
+}
+
+.sing{
+  padding: 0.5rem;
+  font-family: math;
+  background-color: #db7093;
+  border-radius: 0.5rem;
+  border-color: rgb(242, 223, 234);
+}
+
+.errmsg {
+  background-color: lightpink;
+  color: firebrick;
+  font-weight: bold;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+
+button
+ {
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+}
+.name{
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+
+.pass{
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+}
+
 * {
   margin: 0;
   padding: 0;
-}
-
-.container {
-  background: linear-gradient();
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.app-wapper {
-  background-color: #fff;
-  min-width: 350px;
-  min-height: 650px;
-  padding: 30px;
   box-sizing: border-box;
-  border-radius: 5px;
-}
+  }
 
-.title {
-  color: rgb(233, 134, 175);
-  text-align: center;
-  margin: 80px 0px 40px 0px;
-}
+  .si{
+    color: #db7093;
+    font-family: math;
+  }
 
-.name,
-.email,
-.password {
-  margin: 20px;
-  color: #969292;
-  font-size: 16px;
-}
+  .log{
+    font-family: math;
+  }
 
-.password {
-  margin-bottom: 40px;
-}
+  .cnx{
+    font-family: math;
+  }
 
-.input {
-  height: 32px;
-  font-size: 20px;
-  outline: none;
-  width: 100%;
-  border-top-style: none;
-  border-left-style: none;
-  border-right-style: none;
-  border-bottom-style: 2px solid black;
-  margin-bottom: 10px;
-}
-
-.error {
-  color: red;
-}
-
-.submit {
-  display: flex;
-  text-transform: uppercase;
-  font-size: 20px;
-  border-radius: 25px;
-  color: white;
-  padding: 10px 60px;
-  background: linear-gradient(to right, #ab1dcf, #f80759);
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
-    rgba(0, 0, 0, 0.22) 0px 15px 12px;
-  margin: auto;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  transition: all 0.1s;
-}
-
-button:active {
-  transform: translateY(22px);
-}
-
-.form-sucess {
-  display: flex;
-  justify-content: center;
-  margin-top: 250px;
-  min-width: 370px;
-  color: #f80759;
-}
-
-/* //new style */
-
-.login {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  flex-direction: column;
-}
+  .n1{
+    font-family: math;
+    color: #db7093;
+  }
+  

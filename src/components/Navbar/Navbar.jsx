@@ -38,20 +38,6 @@ const Navbar = ({ totalItems }) => {
             Disney Store
           </Typography>
           <Typography>{/* <Search></Search> */}</Typography>
-
-          {/* <Typography> */}
-          {/* <ul position="fixed" className={classes.ul} color="inherit">
-              <li className={classes.a}>
-                <a href="/mugs">Mugs</a>
-              </li>
-              <li className={classes.a}>
-                <a href="/soin">Soin</a>
-              </li>
-              <li className={classes.a}>
-                <a href="/peluche">Peluches</a>
-              </li>
-            </ul> */}
-          {/* </Typography> */}
           <div className={classes.grow} />
           {/* { location.pathname =='/' && ( */}
           <div className={classes.button}>

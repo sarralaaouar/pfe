@@ -7,7 +7,7 @@
 
 h1 {
   margin: 1rem auto 4rem;
-  color: #f6c4e6;
+  color: #db7093;
 }
 .name_product {
   font-size: 15px;
@@ -39,7 +39,7 @@ h1 {
   outline: 0;
   padding: 12px;
   color: white;
-  background-color: #f6c4e6;
+  background-color: #db7093;
   text-align: center;
   cursor: pointer;
   width: 100%;
@@ -60,7 +60,7 @@ h1 {
 }
 
 .arr_right {
-  background-color: #f6c4e6;
+  background-color: #db7093;
   width: 30px;
   width: 40px;
   height: 40px;
@@ -71,7 +71,7 @@ h1 {
   cursor: pointer;
 }
 .arr_left {
-  background-color: #f6c4e6;
+  background-color: #db7093;
   width: 40px;
   height: 40px;
   border-radius: 4px;

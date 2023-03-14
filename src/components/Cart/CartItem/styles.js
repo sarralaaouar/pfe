@@ -20,5 +20,10 @@ export default makeStyles(() => ({
   buttons: {
     display: "flex",
     alignItems: "center",
+    
+  },
+
+  btn_remove: {
+    backgroundColor:"pink",
   },
 }));

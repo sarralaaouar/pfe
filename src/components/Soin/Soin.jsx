@@ -8,6 +8,7 @@ import { Input } from "antd";
 import "../Products/search.css";
 const { Search } = Input;
 
+
 const Soin = (props) => {
   const { products, onAddToCart } = props;
   const [soin, setSoin] = useState([]);
@@ -53,6 +54,7 @@ const Soin = (props) => {
           }}
         />
       </div>
+      <div className="bisous" ><h1>S k i n C a r e</h1></div>
       <div className="soin">
         <Grid container n="center" spacing={4}>
           {soin.map((product) => (
