@@ -91,7 +91,7 @@ function App() {
               />
             </Route>
             <Route exact path="/checkout">
-              <Checkout />
+              <Checkout cart={cart} />
             </Route>
             <Route exact path="/mugs">
               <Pyjamas products={products} onAddToCart={handleAddToCart} />
@@ -108,9 +108,7 @@ function App() {
             <Route exact path="/register">
               <Register />
             </Route>
-            <Route exact path="/profile">
-              <Profile />
-            </Route>
+
             <Route exact path="/">
               <Slider />
               <Pslider

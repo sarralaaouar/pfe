@@ -22,12 +22,12 @@ const Cart = ({
     </Typography>
   );
 
-  if (!cart.line_items) return "Loading";
+  if (!cart?.line_items) return "Loading";
 
   const renderCart = () => (
     <>
       <Grid container spacing={3}>
-        {cart.line_items.map((lineItem) => (
+        {cart?.line_items.map((lineItem) => (
           <Grid item xs={12} sm={4} key={lineItem.id}>
             <CartItem
               item={lineItem}
@@ -53,8 +53,6 @@ const Cart = ({
             Empty cart
           </Button>
           <Button
-            
-            
             className={classes.checkoutButton}
             component={Link}
             to="/checkout"
@@ -76,7 +74,7 @@ const Cart = ({
       <Typography className={classes.title} variant="h5" gutterBottom>
         Your Shopping Cart
       </Typography>
-      {!cart.line_items.length ? renderEmptyCart() : renderCart()}
+      {!cart?.line_items.length ? renderEmptyCart() : renderCart()}
     </Container>
   );
 };
