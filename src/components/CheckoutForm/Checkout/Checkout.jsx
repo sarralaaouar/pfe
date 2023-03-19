@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import {
   Paper,
   Stepper,
@@ -13,17 +13,43 @@ import useStyle from "./styles";
 import AdressForm from "../AdressForm";
 import PaymentForm from "../PaymentForm";
 import "./Checkout.css";
+import {commerce} from '../../../lib/commerce'
+
 const steps = ["shipping address", "Payment details"];
 
-const Checkout = () => {
+
+const Checkout = ({cart}) => {
   const [activeStep, setActiveStep] = useState(0);
+  const [checkoutToken, setCheckoutToken] = useState(null);
+  const [shippingData, setShippigData] = useState ({});
   const classes = useStyle();
+  useEffect(()=> {
+    const generateToken = async () => {
+      try {
+        const token = await commerce.checkout.generateToken(cart.id, { type: 'cart' });
 
-  // const Confirmation = () => <div>Confirmation</div>;
+        setCheckoutToken(token);
 
-  // const Form = ()=> activeStep === 0
-  //   ? <AdressForm/>
-  //   : <PaymentForm/>
+      } catch (error) {
+        
+      }
+    };
+    generateToken();
+  },[cart]);
+
+  const nextStep = () => setActiveStep ((prevActiveStep)=>prevActiveStep+1);
+  const backStep = () => setActiveStep ((prevActiveStep)=>prevActiveStep-1);
+
+  const next = (values) => {
+      setShippigData(values);
+      nextStep();
+   }
+   const Confirmation = () => (
+   <div>Confirmation</div>
+   )
+   const Form = ()=> activeStep === 0
+   ? <AdressForm checkoutToken={checkoutToken} next={next}/>
+   : <PaymentForm shippingData={shippingData} checkoutToken={checkoutToken}/>
 
   return (
     <>
@@ -40,9 +66,8 @@ const Checkout = () => {
               </Step>
             ))}
           </Stepper>
-          {activeStep === steps.length && " <Confirmation /> "}
-          {activeStep === 0 && <AdressForm setActiveStep={setActiveStep} />}
-          {activeStep === 1 && <PaymentForm setActiveStep={setActiveStep} />}
+          {activeStep === steps.length ? <Confirmation /> : checkoutToken && <Form/> }
+          
         </Paper>
       </main>
     </>

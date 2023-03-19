@@ -93,7 +93,7 @@ function App() {
               />
             </Route>
             <Route exact path='/checkout'>
-              <Checkout/>
+              <Checkout cart={cart}/>
             </Route>
             <Route exact path="/mugs">
               <Pyjamas products={products} onAddToCart={handleAddToCart} />
