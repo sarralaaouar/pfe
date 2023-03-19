@@ -9,9 +9,10 @@ import Pslider from "./components/Pslider/Pslider";
 import Slider from "./components/Slider/Slider";
 import Register from "./components/Register/Register";
 import Nav from "./components/CategoriesNav/Nav";
-import Liv from '../src/assests/livraison.png'
+import Liv from "../src/assests/livraison.png";
 import Checkout from "./components/CheckoutForm/Checkout/Checkout";
 import Footer from "./Footer/Footer";
+import Profile from "./views/profile/Profile";
 
 function App() {
   const [messageApi, contextHolder] = message.useMessage();
@@ -69,11 +70,8 @@ function App() {
 
   // console.log(cart);
 
-  
-
   return (
     <>
-    
       {contextHolder}
       <Router>
         <div className="app">
@@ -92,8 +90,8 @@ function App() {
                 handleEmptyCart={handleEmptyCart}
               />
             </Route>
-            <Route exact path='/checkout'>
-              <Checkout/>
+            <Route exact path="/checkout">
+              <Checkout />
             </Route>
             <Route exact path="/mugs">
               <Pyjamas products={products} onAddToCart={handleAddToCart} />
@@ -110,19 +108,21 @@ function App() {
             <Route exact path="/register">
               <Register />
             </Route>
+            <Route exact path="/profile">
+              <Profile />
+            </Route>
             <Route exact path="/">
               <Slider />
               <Pslider
                 products={products}
                 onAddToCart={handleAddToCart}
               ></Pslider>
-              <img src={Liv}/>
+              <img src={Liv} />
             </Route>
           </Switch>
         </div>
-        <Footer/>
+        <Footer />
       </Router>
-      
     </>
   );
 }

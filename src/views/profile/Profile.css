@@ -1,0 +1,51 @@
+.profile {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(24, minmax(auto, calc(100% / 24)));
+  grid-gap: 20px;
+  font-family: "Poppins", sans-serif;
+}
+.section {
+  text-align: left;
+  border: 1px solid #dadada;
+  border-radius: 8px;
+  padding: 20px;
+}
+.profile_left {
+  grid-column-end: span 8;
+}
+.profile_right {
+  grid-column-end: span 16;
+}
+
+.avatar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+}
+
+.name_user {
+  font-size: 15px;
+}
+.email_user {
+  font-size: 14px;
+}
+label {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+
+  color: #969696;
+}
+.input_user {
+  margin-top: 7px;
+  margin-bottom: 20px;
+}
