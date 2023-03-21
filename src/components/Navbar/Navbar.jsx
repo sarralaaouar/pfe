@@ -18,6 +18,8 @@ import Search from "../Search/Search";
 const Navbar = ({ totalItems }) => {
   const classes = UseStyles();
   const location = useLocation();
+  let userString = localStorage.getItem("disney_user");
+
   return (
     <div className="header" style={{ marginBottom: "50px" }}>
       <AppBar position="fixed" className={classes.appBar} color="inherit">
@@ -55,7 +57,7 @@ const Navbar = ({ totalItems }) => {
           <div className={classes.button}>
             <IconButton
               component={Link}
-              to="/login"
+              to={userString ? "/profile" : "/login"}
               aria-label="login"
               color="inhert"
             >

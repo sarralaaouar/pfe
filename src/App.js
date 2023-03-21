@@ -13,6 +13,7 @@ import Liv from "../src/assests/livraison.png";
 import Checkout from "./components/CheckoutForm/Checkout/Checkout";
 import Footer from "./Footer/Footer";
 import Profile from "./views/profile/Profile";
+import Login from "./components/Login/Login";
 
 function App() {
   const [messageApi, contextHolder] = message.useMessage();
@@ -103,12 +104,14 @@ function App() {
               <Peluche products={products} onAddToCart={handleAddToCart} />
             </Route>
             <Route exact path="/login">
-              <Form />
+              <Login />
             </Route>
             <Route exact path="/register">
               <Register />
             </Route>
-
+            <Route exact path="/profile">
+              <Profile />
+            </Route>
             <Route exact path="/">
               <Slider />
               <Pslider
