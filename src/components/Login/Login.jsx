@@ -37,7 +37,9 @@ function Login() {
         }
       } catch (error) {
         console.log(error);
-        message.error(error.response.data.message || "something went wrong");
+        message.error(
+          error.response ? error.response.data.message : "something went wrong"
+        );
       }
     },
   });

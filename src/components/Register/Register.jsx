@@ -38,7 +38,7 @@ function Register() {
           </div>
         </form>
         <p className="signup_text">
-          Already have an account?
+          Already have an account?{" "}
           <a className="link_reg" href="/login">
             Log In
           </a>
