@@ -40,7 +40,7 @@ function Register() {
       try {
         console.log(values);
         const data = await axios.post(
-          "https://disney-backend.vercel.app/api/v1/users/login",
+          "https://disney-backend.vercel.app/api/v1/users/signup",
           { ...values }
         );
         const user = await data.data.data.user;
