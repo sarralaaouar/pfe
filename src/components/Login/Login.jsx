@@ -9,6 +9,12 @@ import { useHistory } from "react-router-dom";
 
 function Login() {
   const navigate = useHistory();
+
+  let userString = localStorage.getItem("disney_user");
+  if (userString) {
+    navigate.push("/profile");
+  }
+
   const validationSchema = Yup.object().shape({
     email: Yup.string()
       .email("Invalid email address")
