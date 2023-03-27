@@ -16,6 +16,8 @@ import {
   FaMapMarkerAlt,
   FaEnvelope,
   FaPhoneAlt,
+  FaInstagram,
+  FaTiktok,
 } from "react-icons/fa";
 
 const Footer = () => {
@@ -32,9 +34,9 @@ const Footer = () => {
               Home
             </a>
 
-            <a href="#">Blog</a>
+            <a href="/">Boutique</a>
 
-            <a href="#">Pricing</a>
+            <a href="/login">Mon Compte</a>
 
             <a href="#">About</a>
 
@@ -49,26 +51,26 @@ const Footer = () => {
         <div className="footer-center">
           <div className="fo_i">
             <div className="i_s">
-              <FaMapMarkerAlt color="white" />
+              <FaMapMarkerAlt color="#db7093" />
             </div>
             <p>
-              <span>444 S. Cedros Ave</span> Solana Beach, California
+              <span></span> Based in Tunisia 
             </p>
           </div>
 
           <div className="fo_i">
             <div className="i_s">
-              <FaPhoneAlt color="white" />
+              <FaPhoneAlt color="#db7093" />
             </div>
-            <p>+1.555.555.5555</p>
+            <p>+216.94.571.687</p>
           </div>
 
           <div className="fo_i">
             <div className="i_s">
-              <FaEnvelope color="white" />
+              <FaEnvelope color="#db7093" />
             </div>
             <p>
-              <a href="mailto:support@company.com">support@company.com</a>
+              <a href="mailto:sarahlaouar00@gmail.com">sarahlaouar00@gmail.com</a>
             </p>
           </div>
         </div>
@@ -81,18 +83,16 @@ const Footer = () => {
           </p>
 
           <div className="footer-icons">
-            <a href="#">
-              <FaFacebookF />
+            <a href="https://www.facebook.com/laouar.sara.1/">
+              <FaFacebookF color="#db7093" />
             </a>
-            <a href="#">
-              <FaTwitter />
+            <a href="https://www.instagram.com/masouad_official/">
+              <FaInstagram color="#db7093" />
             </a>
-            <a href="#">
-              <FaLinkedinIn />
+            <a href="https://www.tiktok.com/@bebouuuu00?is_from_webapp=1&sender_device=pc">
+              <FaTiktok color="#db7093"/>
             </a>
-            <a href="#">
-              <FaGithub />
-            </a>
+           
           </div>
         </div>
       </footer>

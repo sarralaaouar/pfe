@@ -14,9 +14,9 @@ const Cart = ({
 
   const renderEmptyCart = () => (
     <Typography variant="subtitle1">
-      You have no items in your shopping cart,
+      Votre panier est actuellement vide.
       <Link className={classes.link} to="/">
-        start adding some
+        Retour à la boutique
       </Link>
       !
     </Typography>
@@ -39,7 +39,7 @@ const Cart = ({
       </Grid>
       <div className={classes.cardDetails}>
         <Typography variant="h4">
-          Subtotal: {cart.subtotal.formatted_with_symbol}
+          Sous-Totale: {cart.subtotal.formatted_with_symbol}
         </Typography>
         <div>
           <Button
@@ -50,7 +50,7 @@ const Cart = ({
             color="secondary"
             onClick={handleEmptyCart}
           >
-            Empty cart
+            Vider le panier
           </Button>
           <Button
             className={classes.checkoutButton}
@@ -61,7 +61,7 @@ const Cart = ({
             variant="contained"
             color="primary"
           >
-            Checkout
+            Commander 
           </Button>
         </div>
       </div>
@@ -72,7 +72,7 @@ const Cart = ({
     <Container>
       <div className={classes.toolbar} />
       <Typography className={classes.title} variant="h5" gutterBottom>
-        Your Shopping Cart
+        Panier
       </Typography>
       {!cart?.line_items.length ? renderEmptyCart() : renderCart()}
     </Container>

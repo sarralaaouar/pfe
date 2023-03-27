@@ -35,7 +35,7 @@ const Checkout = ({cart ,
         setCheckoutToken(token);
 
       } catch (error) {
-        
+        console.log (error);
       }
     };
     generateToken();
@@ -48,9 +48,36 @@ const Checkout = ({cart ,
       setShippigData(values);
       nextStep();
    }
-   const Confirmation = () => (
-   <div>Confirmation</div>  
+   let Confirmation = () => order.customer ? (
+    <>
+     <div>
+       <Typography variant="h5">
+         Thank you for your purchase , {order.customer.firstname} {order.customer.lastname}
+       </Typography>
+       <Divider className={classes.divider}/>
+       <Typography variant='subtitle2'>Order ref : {order.customer_reference}</Typography>
+     </div>
+     <br />
+     <Button href="/" variant="outlined" type="button"> Back to home</Button>
+    </>  
+   ): (
+    <div className={classes.spinner}>
+       <CircularProgress/> 
+    </div>
    );
+
+   if (error) {
+    Confirmation = () => (
+    <>
+     <Typography variant="h5">
+       Error : {error}
+     </Typography>
+     <br />
+     <Button href="/" variant="outlined" type="button"> Back to home</Button>
+    </>
+    );
+   }
+
    const Form = ()=> activeStep === 0
    ? <AdressForm checkoutToken={checkoutToken} next={next}/>
    : <PaymentForm shippingData={shippingData} checkoutToken={checkoutToken} nextStep={nextStep} backStep={backStep} onCaptureCheckout={onCaptureCheckout}/>
@@ -63,10 +90,10 @@ const Checkout = ({cart ,
           <Typography variant="h4" align="center">
             Checkout
           </Typography>
-          <Stepper activeStep={activeStep} className={classes.stepper}>
+          <Stepper activeStep={activeStep} className={classes.stepper} color='#fc6c85 '>
             {steps.map((step) => (
               <Step key={step}>
-                <StepLabel>{step}</StepLabel>
+                <StepLabel color="#fc6c85 ">{step}</StepLabel>
               </Step>
             ))}
           </Stepper>

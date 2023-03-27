@@ -28,10 +28,14 @@ export default makeStyles((theme) => ({
       marginTop: theme.spacing(6),
       marginBottom: theme.spacing(6),
       padding: theme.spacing(3),
+      color :'#db7093', 
     },
+
   },
   stepper: {
     padding: theme.spacing(3, 0, 5),
+    color :'#db7093',
+
   },
   buttons: {
     display: "flex",
@@ -40,13 +44,16 @@ export default makeStyles((theme) => ({
   button: {
     marginTop: theme.spacing(3),
     marginLeft: theme.spacing(1),
+    color :'red',
   },
   divider: {
     margin: "20px 0",
+    color :'#db7093',
   },
   spinner: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    color :'#db7093',
   },
 }));

@@ -63,9 +63,9 @@ function App() {
   };
 
   const refreshCart = async () => {
-    const newCrat = await commerce.cart.refresh();
+    const newCart = await commerce.cart.refresh();
 
-    SetCart(newCrat);
+    SetCart(newCart);
   };
 
   const handleCaptureCheckout = async (checkoutTokenId, newOrder) => {

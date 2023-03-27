@@ -84,7 +84,7 @@ const AdressForm = ({ setActiveStep, checkoutToken, next }) => {
       .email("Invalid email address")
       .required("Email is required"),
     adress: Yup.string().required("Adress is required"),
-    city: Yup.number().required("City is required"),
+    city: Yup.string().required("City is required"),
     zip: Yup.number().required("Code Zip is required"),
   });
 
@@ -116,6 +116,7 @@ const AdressForm = ({ setActiveStep, checkoutToken, next }) => {
           id="firstName"
           name="firstName"
           type="text"
+          
           onChange={formik.handleChange}
           value={formik.values.firstName}
           onBlur={formik.handleBlur}
@@ -127,6 +128,7 @@ const AdressForm = ({ setActiveStep, checkoutToken, next }) => {
         <Input
           placeholder="Last name"
           id="lastname"
+         
           name="lastName"
           type="text"
           onChange={formik.handleChange}
@@ -141,6 +143,7 @@ const AdressForm = ({ setActiveStep, checkoutToken, next }) => {
           id="email"
           name="email"
           type="email"
+          
           onChange={formik.handleChange}
           value={formik.values.email}
           onBlur={formik.handleBlur}

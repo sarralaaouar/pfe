@@ -25,10 +25,10 @@ const PaymentForm = ({ checkoutToken, shippingData,backStep,onCaptureCheckout , 
     } else {
       const orderData = {
         line_items: checkoutToken.line_items,
-        customer : {firstname: shippingData.firstName , lastename: shippingData.lastName, email: shippingData.email},
+        customer : {firstname: shippingData.firstName , lastname: shippingData.lastName, email: shippingData.email},
           shipping : {name:'Primary',
           street :shippingData.adress,
-           twon_city:shippingData.city,
+           town_city:shippingData.city,
            county_state: shippingData.shippingSubdivision,
            postal_zip_code : shippingData.zip,
            country: shippingData.shippingCountry,

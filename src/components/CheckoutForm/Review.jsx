@@ -5,7 +5,7 @@ const Review = ({ checkoutToken }) => {
   console.log("tt", checkoutToken);
   return (
     <>
-      <Typography variant="h6" gutterBottom>
+      <Typography variant="h6" gutterBottom color="#fc6c85 ">
         Order summary
       </Typography>
       <List disablePadding>
@@ -13,7 +13,7 @@ const Review = ({ checkoutToken }) => {
           <ListItem style={{ padding: "10px 0" }} key={product?.name}>
             <ListItemText
               primary={product.name}
-              secondary={`Quantity: ${product?.quantity}`}
+              secondary={`Quantité: ${product?.quantity}`}
             />
             <Typography variant="body2">
               {product?.line_total?.formatted_with_symbol}
