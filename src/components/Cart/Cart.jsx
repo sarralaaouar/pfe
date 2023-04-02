@@ -61,7 +61,7 @@ const Cart = ({
             variant="contained"
             color="primary"
           >
-            Commander 
+            Commander
           </Button>
         </div>
       </div>
