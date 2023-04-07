@@ -8,16 +8,16 @@ import {
   Menu,
   Typography,
 } from "@material-ui/core";
-import { ShoppingBasket, PermIdentity } from "@material-ui/icons";
-import { Link, useLocation } from "react-router-dom";
+import { ShoppingBasket, PermIdentity, ExitToApp } from "@material-ui/icons";
+import { Link, useHistory, useLocation } from "react-router-dom";
 
 import logo from "../../assests/logo.png";
 import UseStyles from "./styles";
-import Search from "../Search/Search";
 
 const Navbar = ({ totalItems }) => {
   const classes = UseStyles();
   const location = useLocation();
+  const navigate = useHistory();
   let userString = localStorage.getItem("disney_user");
 
   return (
@@ -66,6 +66,22 @@ const Navbar = ({ totalItems }) => {
               </Badge>
             </IconButton>
           </div>
+          {userString && (
+            <div className={classes.button}>
+              <IconButton
+                aria-label="login"
+                color="inhert"
+                onClick={() => {
+                  localStorage.removeItem("disney_user");
+                  navigate.push("/login");
+                }}
+              >
+                <Badge color="secondary">
+                  <ExitToApp />
+                </Badge>
+              </IconButton>
+            </div>
+          )}
           {/* )} */}
         </Toolbar>
       </AppBar>

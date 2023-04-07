@@ -13,6 +13,7 @@ import Checkout from "./components/CheckoutForm/Checkout/Checkout";
 import Footer from "./Footer/Footer";
 import Profile from "./views/profile/Profile";
 import Login from "./components/Login/Login";
+import Home from "./views/home/home";
 
 function App() {
   const [messageApi, contextHolder] = message.useMessage();
@@ -140,7 +141,8 @@ function App() {
               <Profile />
             </Route>
             <Route exact path="/">
-              <Slider />
+              {/* <Slider /> */}
+              <Home />
               <Pslider
                 products={products}
                 onAddToCart={handleAddToCart}
