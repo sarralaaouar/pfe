@@ -14,6 +14,7 @@ import Footer from "./Footer/Footer";
 import Profile from "./views/profile/Profile";
 import Login from "./components/Login/Login";
 import Home from "./views/home/home";
+import useAlan from "./hooks/useAlan";
 
 function App() {
   const [messageApi, contextHolder] = message.useMessage();
@@ -83,6 +84,9 @@ function App() {
     }
   };
 
+ 
+ 
+ 
   useEffect(() => {
     fetchProducts();
     fetchCart();
@@ -93,7 +97,7 @@ function App() {
   };
 
   // console.log(cart);
-
+   useAlan ()
   return (
     <>
       {contextHolder}

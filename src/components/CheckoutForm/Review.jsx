@@ -5,14 +5,14 @@ const Review = ({ checkoutToken }) => (
   <>
     {console.log(checkoutToken)}
     <Typography variant="h6" gutterBottom>
-      Order summary
+    Récapitulatif de la commande
     </Typography>
     <List disablePadding>
       {checkoutToken.line_items.map((product) => (
         <ListItem style={{ padding: "10px 0" }} key={product.name}>
           <ListItemText
             primary={product.name}
-            secondary={`Quantity: ${product.quantity}`}
+            secondary={`Quantitè: ${product.quantity}`}
           />
           <Typography variant="body2">
             {product.line_total.formatted_with_symbol}

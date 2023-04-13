@@ -3,7 +3,12 @@ import { Container, Typography, Button, Grid } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import CartItem from "./CartItem/CartItem";
 import useStyles from "./styles";
+import { useContext } from "react";
 
+const CartContext = React.createContext()
+export function useCart (){
+  return useContext (CartContext)
+}
 const Cart = ({
   cart,
   handleUpdateCartQty,
