@@ -1,0 +1,94 @@
+.profile {
+  width: 100%;
+  grid-gap: 30px;
+  font-family: "Poppins", sans-serif;
+  margin-top: 40px;
+  display: flex;
+}
+.section {
+  text-align: left;
+  border: 1px solid #dadada;
+  border-radius: 8px;
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+}
+.profile_left {
+  grid-column-end: span 8;
+  flex: 10;
+}
+.profile_right {
+  grid-column-end: span 16;
+  flex: 16;
+  min-height: 512px;
+}
+
+.avatar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+}
+
+.name_user {
+  font-size: 15px;
+}
+.email_user {
+  font-size: 14px;
+}
+label {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+
+  color: #969696;
+}
+.input_user {
+  margin-top: 7px;
+  margin-bottom: 20px;
+}
+
+/* //cards */
+.cards_c {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+}
+.card_c {
+  border-radius: 15px;
+  background-color: #d3d3d3;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  flex-direction: column;
+  gap: 20px;
+}
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+@media screen and (max-width: 968px) {
+  .profile {
+    flex-wrap: wrap;
+  }
+  .profile_left,
+  .profile_right {
+    width: 100%;
+    flex: none;
+  }
+}

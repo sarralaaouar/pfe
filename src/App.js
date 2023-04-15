@@ -3,21 +3,27 @@ import { commerce } from "./lib/commerce";
 import { Products, Navbar, Cart, Soin, Pyjamas, Peluche } from "./components";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
-import Form from "./components/Login/Form";
 import { message } from "antd";
 import Pslider from "./components/Pslider/Pslider";
 import Slider from "./components/Slider/Slider";
 import Register from "./components/Register/Register";
 import Nav from "./components/CategoriesNav/Nav";
-import Liv from '../src/assests/livraison.png'
+import Liv from "../src/assests/livraison.png";
 import Checkout from "./components/CheckoutForm/Checkout/Checkout";
 import Footer from "./Footer/Footer";
+import Profile from "./views/profile/Profile";
+import Login from "./components/Login/Login";
+import Home from "./views/home/home";
+import useAlan from "./hooks/useAlan";
 
 function App() {
   const [messageApi, contextHolder] = message.useMessage();
   const key = "updatable";
   const [products, setProducts] = useState([]);
   const [cart, SetCart] = useState([]);
+  const [order, setOrder] = useState({});
+  const [errorMessage, SetErrorMessage] = useState("");
+
   const fetchProducts = async () => {
     const { data } = await commerce.products.list();
     setProducts(data);
@@ -58,6 +64,29 @@ function App() {
     SetCart(cart);
   };
 
+  const refreshCart = async () => {
+    const newCart = await commerce.cart.refresh();
+
+    SetCart(newCart);
+  };
+
+  const handleCaptureCheckout = async (checkoutTokenId, newOrder) => {
+    try {
+      const incomingOrder = await commerce.checkout.capture(
+        checkoutTokenId,
+        newOrder
+      );
+
+      setOrder(incomingOrder);
+      refreshCart();
+    } catch (error) {
+      SetErrorMessage(error.data.error.message);
+    }
+  };
+
+ 
+ 
+ 
   useEffect(() => {
     fetchProducts();
     fetchCart();
@@ -68,12 +97,9 @@ function App() {
   };
 
   // console.log(cart);
-
-  
-
+   useAlan ()
   return (
     <>
-    
       {contextHolder}
       <Router>
         <div className="app">
@@ -92,8 +118,13 @@ function App() {
                 handleEmptyCart={handleEmptyCart}
               />
             </Route>
-            <Route exact path='/checkout'>
-              <Checkout/>
+            <Route exact path="/checkout">
+              <Checkout
+                cart={cart}
+                order={order}
+                onCaptureCheckout={handleCaptureCheckout}
+                error={errorMessage}
+              />
             </Route>
             <Route exact path="/mugs">
               <Pyjamas products={products} onAddToCart={handleAddToCart} />
@@ -105,24 +136,27 @@ function App() {
               <Peluche products={products} onAddToCart={handleAddToCart} />
             </Route>
             <Route exact path="/login">
-              <Form />
+              <Login />
             </Route>
             <Route exact path="/register">
               <Register />
             </Route>
+            <Route exact path="/profile">
+              <Profile />
+            </Route>
             <Route exact path="/">
-              <Slider />
+              {/* <Slider /> */}
+              <Home />
               <Pslider
                 products={products}
                 onAddToCart={handleAddToCart}
               ></Pslider>
-              <img src={Liv}/>
+              <img src={Liv} />
             </Route>
           </Switch>
         </div>
-        <Footer/>
+        <Footer />
       </Router>
-      
     </>
   );
 }

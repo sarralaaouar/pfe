@@ -8,7 +8,7 @@ export default function Bestp(props) {
         <p className="name_product">{props?.name}</p>
         <p>
           <button onClick={() => props?.onAddToCart(props?.id, 1)}>
-            Add to Cart
+            Ajouter au panier 
           </button>
         </p>
       </div>

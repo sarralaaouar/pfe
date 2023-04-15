@@ -1,0 +1,124 @@
+.home {
+  width: 100%;
+}
+.s_img {
+  width: 100%;
+  margin-bottom: 50px;
+  margin-top: 20px;
+  position: relative;
+}
+.s_img img {
+  width: 100%;
+}
+.disney_text {
+  position: absolute;
+  top: 32%;
+  /* left: 45%;
+  right: 50%;  */
+
+  font-size: 24px;
+  font-weight: 700;
+  width: 100%;
+}
+@media only screen and (max-width: 1200px) {
+  .disney_text {
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .disney_text {
+    font-size: 14px;
+    font-weight: 500;
+    top: 20%;
+  }
+}
+
+.cards {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+@media only screen and (max-width: 1200px) {
+  .cards {
+    flex-wrap: wrap;
+  }
+}
+.cards .card_i {
+  background: #f5f1f1;
+  border: 1px solid #dedede;
+  border-radius: 11px;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 115px;
+  padding: 16px 16px;
+  gap: 16px;
+  width: 100%;
+}
+.img {
+  width: 83.41px;
+  height: 83.41px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.img img {
+  width: 40px;
+}
+
+.text_i {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+  flex-direction: column;
+}
+.text_i p {
+  text-align: left;
+}
+.title_i {
+  text-align: left;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 26px;
+
+  color: #000000;
+}
+.subtitle_i {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+
+  color: #000000;
+}
+
+@keyframes bounce-in {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.text-animation h1 {
+  animation: bounce-in 1s ease-in-out;
+}
+
+/* Hide the text initially */
+.animated-font {
+  opacity: 0;
+}
