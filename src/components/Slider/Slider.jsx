@@ -28,7 +28,7 @@ function Slider() {
  
     return (
     <div>
-        <h1>Magic Life </h1>
+        <h1>Quand La Magie Prend Vie</h1>
       <Carousel responsive={responsive}>
         <div>
           <img src={s1} alt=''/>

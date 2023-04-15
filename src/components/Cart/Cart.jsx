@@ -73,7 +73,7 @@ const Cart = ({
   return (
     <Container>
       <div className={classes.toolbar} />
-      <Typography className={classes.title} variant="h5" gutterBottom>
+      <Typography className={classes.title} variant="h5" gutterBottom color="#db7093">
         Your Shopping Cart
       </Typography>
       {!cart.line_items.length ? renderEmptyCart() : renderCart()}
